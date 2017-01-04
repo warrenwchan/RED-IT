@@ -11,6 +11,7 @@ module.exports = {
       "no-useless-return": 0,
       "import/no-named-default": 0,
       "react/jsx-filename-extension": 0,
-      "react/prefer-stateless-function": 1
+      "react/prefer-stateless-function": 1,
+      "jsx-a11y/anchor-has-content": 1
     }
 };

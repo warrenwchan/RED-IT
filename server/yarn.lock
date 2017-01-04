@@ -859,6 +859,10 @@ express:
     utils-merge "1.0.0"
     vary "~1.1.0"
 
+express-history-api-fallback:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/express-history-api-fallback/-/express-history-api-fallback-2.1.0.tgz#3bed00cf8a3a3baa85c1d43357c28762eb6185ac"
+
 fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"

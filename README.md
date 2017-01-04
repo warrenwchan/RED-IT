@@ -1,7 +1,7 @@
 ## ⚛️ RED React Seed Application
 
 #### Install
-- Clone or Download this repository
+- Clone or download this repository
 - Run `yarn` in the `server` & `web.browser` directories
 
 #### Development

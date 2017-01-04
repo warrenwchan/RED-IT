@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 
-import Layout from '../layouts/Main';
+import MainLayout from '../../layouts/MainLayout';
 import WelcomeMessage from '../../components/WelcomeMessage'
 
-import './App.scss';
+import styles from './styles.css'
 
 class App extends Component {
   render() {
+    console.log(styles.App)
     return (
-      <Layout>
-        <div className="App">
+      <MainLayout>
+        <div className={styles.app}>
             <WelcomeMessage />
         </div>
-      </Layout>
+      </MainLayout>
     );
   }
 }

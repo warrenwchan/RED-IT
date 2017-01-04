@@ -7,7 +7,6 @@ import styles from './styles.css'
 
 class App extends Component {
   render() {
-    console.log(styles.App)
     return (
       <MainLayout>
         <div className={styles.app}>

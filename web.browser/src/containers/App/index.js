@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
-
-import MainLayout from '../../layouts/MainLayout';
-import WelcomeMessage from '../../components/WelcomeMessage';
+import React, { Component, PropTypes } from 'react';
 
 import styles from './styles.css'
 
 class App extends Component {
   render() {
     return (
-      <MainLayout>
-        <div className={styles.app}>
-            <WelcomeMessage />
-        </div>
-      </MainLayout>
+      <div className={styles.app}>
+        {this.props.children}
+      </div>
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.object,
+};
 
 export default App;

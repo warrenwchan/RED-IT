@@ -3,7 +3,20 @@ import ReactDOM from 'react-dom';
 
 import App from './containers/App';
 import MainLayout from './layouts/MainLayout';
-import WelcomeMessage from './components/WelcomeMessage';
+// import Week from './components/Week';
+// import CreatPost from './containers/CreatePost';
+import Welcome from './containers/Welcome';
+import LoginContainer from './containers/Login';
+import PostList from './containers/PostList';
+// import NotFound from './containers/NotFound';
+
+import { 
+  BrowserRouter as Router, 
+  Route,
+  Switch,
+  Link,
+  Redirect
+} from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from './styles/mui-theme';
@@ -16,11 +29,17 @@ injectTapEventPlugin();
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
-    <MainLayout>
-      <App>
-        <WelcomeMessage />
-      </App>
-    </MainLayout>
+    <Router>
+      <MainLayout>
+        <App>
+          <Switch>
+            <Route exact path="/" component={Welcome}/>
+            <Route exact path="/post" component={PostList}/>
+            <Route exact path="/login" component={LoginContainer}/>
+          </Switch>
+        </App>
+      </MainLayout>
+    </Router>
   </MuiThemeProvider>,
   document.getElementById('root')
 );

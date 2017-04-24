@@ -8,7 +8,7 @@ import SiteIcon from 'material-ui/svg-icons/communication/import-contacts';
 import Weeks from './../../components/Week'
 import styles from './styles.css'
 
-class NavMenu extends React.Component {
+class NavMenu extends Component {
   render() {
     return (
       <div>

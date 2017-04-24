@@ -6,7 +6,7 @@ import MainLayout from './layouts/MainLayout';
 // import Week from './components/Week';
 // import CreatPost from './containers/CreatePost';
 import Welcome from './containers/Welcome';
-import Login from './containers/Login';
+import LoginContainer from './containers/Login';
 import PostList from './containers/PostList';
 // import NotFound from './containers/NotFound';
 
@@ -35,7 +35,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" component={Welcome}/>
             <Route exact path="/post" component={PostList}/>
-            <Route exact path="/post" component={Login}/>
+            <Route exact path="/login" component={LoginContainer}/>
           </Switch>
         </App>
       </MainLayout>

@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import Post from './../../components/Post';
-import PostToolBar from './../../components/PostToolBar';
 
-const PostList = ({ post, updateVote }) => {
-    return (
-        <div>
-            <PostToolBar/>
-            <Post/>
-        </div>
-    )
-}
+const PostList = ({ posts, upVote }) => (
+  <div>
+    <div>
+      {
+        posts.map(post => (
+          <Post
+            post={post}
+            key={post.id}
+            upVote={upVote}
+          />
+        ))
+      }
+    </div>
+  </div>
+  );
+
+PostList.propTypes = {
+  posts: PropTypes.array.isRequired,
+  upVote: PropTypes.func,
+};
 
 export default PostList;

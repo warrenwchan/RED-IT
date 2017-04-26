@@ -1,27 +1,26 @@
-import React, {Component} from 'react';
-import Drawer from 'material-ui/Drawer';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Week from './../../components/Week';
+import { data } from './../../mock-data';
 
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import SiteIcon from 'material-ui/svg-icons/communication/import-contacts';
+class Categories extends Component {
 
-import Weeks from './../../components/Week'
-import styles from './styles.css'
-
-class NavMenu extends Component {
   render() {
     return (
       <div>
-        <Drawer>
-            <AppBar className={styles.menuHome}
-                title="RED it"
-                iconElementLeft={<IconButton><SiteIcon/></IconButton>}
-            />
-            <Weeks/>
-        </Drawer>
+        {data.weeks.map((week ,i) => {
+          return <Week
+            week={week}
+            key={i}
+          />
+        })};
       </div>
     );
   }
 }
 
-export default NavMenu;
+const mapStateToProps = (state) => ({
+  weeks: state.weeks
+})
+
+export default connect(mapStateToProps)(Categories)

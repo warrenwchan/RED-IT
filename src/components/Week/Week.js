@@ -1,34 +1,28 @@
-import React, {Component} from 'react';
-import {List, ListItem} from 'material-ui/List';
+import React, { PropTypes } from 'react';
+
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
+import { List, ListItem } from 'material-ui/List';
 
-import {data} from './../../mock-data'
+import styles from './styles.css';
 
-class Week extends Component {
-    
-    // We pass the category data in and places each Category in a ListItem.
-    weekItems(category, i) {
-        return( <ListItem primaryText={category} key={i}/> )}
+const Week = ({ week, i }) => (
 
-    // This builds each week chunk, contaning the week title and each ListItem built above.
-    createWeek(week, i) {
-        return(
-            <List key={i}>
-                <Subheader>{ week.title }</Subheader>
-                <Divider />
-                {week.categories.map(this.weekItems)} {/* we are mapping the category array to get the data for weekitem */}
-            </List>
-        )
-    }
+  <List className={styles.week}>
+    <Subheader>{week.title}</Subheader>
+    <Divider />
+      {week.categories.map((category, i) => (
+        <ListItem
+          primaryText={category}
+          key={i}
+        />
+      ))}
+    {console.log(week)}
+  </List>
+);
 
-    render() {
-        return(
-            <div>
-                {data.weeks.map((week, i) => this.createWeek(week, i))} {/*we are mapping the weeks array to get the data for createWeek*/}
-            </div>
-        )
-    };
-}
+Week.propTypes = {
+  weeks: PropTypes.array
+};
 
 export default Week;

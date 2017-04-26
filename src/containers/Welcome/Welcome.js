@@ -1,9 +1,11 @@
 import React from 'react';
 
-import styles from './styles.css'
+import styles from './styles.css';
 
 const HeroText = () => (
-    <h1 className={styles.heroText}> welcome! </h1>
+  <div className={styles.heroText}>
+    <h1> welcome! </h1>
+  </div>
 );
 
 export default HeroText;

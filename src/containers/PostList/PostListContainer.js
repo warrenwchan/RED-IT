@@ -14,17 +14,17 @@ class PostListContainer extends Component {
     return (<Chip key={i}>{this.category}</Chip>);
   }
 
-  upVote(clickedOnPost) {
-    const newPostList = this.state.posts.map((post) => {
-      if (clickedOnPost.id === post.id) {
-        post.votes += 1;
-      }
-      return post;
-    });
-    this.setState({
-      posts: newPostList
-    });
-  }
+  // upVote(clickedOnPost) {
+  //   const newPostList = this.state.posts.map((post) => {
+  //     if (clickedOnPost.id === post.id) {
+  //       post.votes += 1;
+  //     }
+  //     return post;
+  //   });
+  //   this.setState({
+  //     posts: newPostList
+  //   });
+  // }
 
   sortNewest() {
     const newPostOrder = this.state.posts.sort((a, b) => {

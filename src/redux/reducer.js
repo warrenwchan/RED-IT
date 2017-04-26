@@ -1,15 +1,23 @@
 import { data } from './../mock-data';
+import { UP_VOTE } from './actions'
 
-export const WeeksReducer = (state = data.weeks, action) => {
+export function WeeksReducer(state = data.weeks, action) {
   switch(action.type) {
     default:
     return state
   }
 }
 
-export const PostReducer = (state = data.posts, action) => {
+export function PostReducer(state = data.posts, action) {
   switch(action.type) {
-    default:
-    return state
+    case UP_VOTE:
+      // Stuck on building reducer for upvote
+      return state.map((post) => {
+        if (action.id === post.id) {
+          post.votes += 1;
+        }});
+
+  default:
+    return state;
   }
 }

@@ -17,7 +17,6 @@ const Week = ({ week, i }) => (
           key={i}
         />
       ))}
-    {console.log(week)}
   </List>
 );
 

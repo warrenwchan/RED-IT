@@ -6,7 +6,7 @@ import Chip from 'material-ui/Chip';
 
 import styles from './styles.css';
 
-const Post = ({ post, upVote }) => (
+const Post = ({ post, i, upVote }) => (
   <div>
     <Card className={styles.postContain}>
       <a href="{post.link}">

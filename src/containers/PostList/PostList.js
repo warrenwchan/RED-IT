@@ -2,21 +2,19 @@ import React, { PropTypes } from 'react';
 
 import Post from './../../components/Post';
 
-const PostList = ({ posts, upVote }) => (
+const PostList = ({ post, i, upVote }) => (
   <div>
-    {posts.map(post => (
       <Post
         post={post}
-        key={post.id}
+        key={i}
         upVote={upVote}
       />
-    ))}
   </div>
 );
 
 PostList.propTypes = {
-  posts: PropTypes.array.isRequired,
-  upVote: PropTypes.func,
+  post: PropTypes.object.isRequired,
+  upVote: PropTypes.func.isRequired
 };
 
 export default PostList;

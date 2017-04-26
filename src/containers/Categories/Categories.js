@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Week from './../../components/Week';
+
 import { data } from './../../mock-data';
 
 class Categories extends Component {

@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-import Chip from 'material-ui/Chip';
-
+import { connect } from 'react-redux';
 import PostToolBar from '../../components/PostToolBar/';
 import { PostList } from './../../containers/PostList/';
+
+import Chip from 'material-ui/Chip';
+
 import { data } from './../../mock-data';
 
 
 class PostListContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      posts: data.posts,
-    };
-  }
 
   postCategories(category, i) {
     return (<Chip key={i}>{this.category}</Chip>);
@@ -56,14 +51,21 @@ class PostListContainer extends Component {
           newest={() => this.sortNewest()}
           popular={() => this.sortPopular()}
         />
-        <PostList
-          posts={this.state.posts}
-          upVote={clickedOnPost => this.upVote(clickedOnPost)}
-        />
+        {data.posts.map((post, i) => {
+           return <PostList
+            post={post}
+            key={i}
+            upVote={clickedOnPost => this.upVote(clickedOnPost)}
+          />
+        })};
       </div>
     );
   }
 }
 
-export default PostListContainer;
+const mapStateToProps = (state) => ({
+  posts: state.posts
+})
+
+export default connect(mapStateToProps)(PostListContainer)
 

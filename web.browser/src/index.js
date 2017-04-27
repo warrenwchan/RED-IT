@@ -10,12 +10,12 @@ import LoginContainer from './containers/Login';
 import PostList from './containers/PostList';
 // import NotFound from './containers/NotFound';
 
-import { 
-  BrowserRouter as Router, 
+import {
+  BrowserRouter as Router,
   Route,
   Switch,
-  Link,
-  Redirect
+  // Link,
+  // Redirect
 } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -34,7 +34,7 @@ ReactDOM.render(
         <App>
           <Switch>
             <Route exact path="/" component={Welcome}/>
-            <Route exact path="/post" component={PostList}/>
+            <Route exact path="/posts" component={PostList}/>
             <Route exact path="/login" component={LoginContainer}/>
           </Switch>
         </App>

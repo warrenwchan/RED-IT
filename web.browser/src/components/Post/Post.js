@@ -2,9 +2,11 @@ import React, { PropTypes } from 'react';
 
 import { Card } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import Chip from 'material-ui/Chip';
+
 import styles from './styles.css';
 
-const Post = ({ post, upVote }) => (
+const Post = ({ post, i, upVote, vote }) => (
   <div>
     <Card className={styles.postContain}>
       <a href="{post.link}">
@@ -12,8 +14,8 @@ const Post = ({ post, upVote }) => (
       </a>
       <p>{post.description}</p>
       <div className={styles.postFooter}>
-        <FlatButton onClick={() => upVote(post)}>▴ Vote {post.votes} </FlatButton>
-        {post.categories.map(postCategories => postCategories)}
+        <FlatButton onTouchTap={() => upVote(post.id)}> ▴ Vote {vote} </FlatButton>
+        <Chip>{post.categories.map(postCategories => postCategories)} </Chip>
       </div>
     </Card>
   </div>
